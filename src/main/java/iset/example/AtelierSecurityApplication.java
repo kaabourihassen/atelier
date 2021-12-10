@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @SpringBootApplication
-public class AtelierSecurityApplication/* implements CommandLineRunner */{
+public class AtelierSecurityApplication implements CommandLineRunner {
 	@Autowired
 	UserRepository userRopository;
 	@Autowired
@@ -22,8 +23,8 @@ public class AtelierSecurityApplication/* implements CommandLineRunner */{
 		SpringApplication.run(AtelierSecurityApplication.class, args);
 	}
 
-//	@Override
-//	public void run(String... args)throws Exception{
+@Override
+public void run(String... args)throws Exception{
 //		Set<Role> roles1 = new HashSet<Role>();
 //		Set<Role> roles2 = new HashSet<Role>();
 //		Role admin = new Role (1,"ADMIN");
@@ -36,5 +37,7 @@ public class AtelierSecurityApplication/* implements CommandLineRunner */{
 //		User user2 = new User("admin","admin",roles2);
 //		userRopository.save(user1);
 //		userRopository.save(user2);
-//	}
+
+	}
+
 }
